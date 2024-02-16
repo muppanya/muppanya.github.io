@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DevFolio Bootstrap Portfolio Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#Education">Education</a></li>
+          <li><a class="nav-link scrollto " href="#Projects">Projects</a></li>
+          <li><a class="nav-link scrollto " href="#Work">Work</a></li>
+          <li><a class="nav-link scrollto" href="#Certifications">Certifications</a></li>
+          <li><a class="nav-link scrollto" href="#Experiments">Experiments</a></li>
+           <!-- Today's Weather -->
+           <br>
+           <li>
+            <h5 class="mb-0">
+              <p style="color: white;">Cincinnati Weather</p>
+              </h5>
+              
+             
+             <div id="Weather"></div>
+             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+             <script>
+                 $.get("https://api.weatherbit.io/v2.0/current?key=5d55d3bd2a3844f0a658a05b4d977cee&postal_code=45220&country=US", function (result) {
+                     if (result && result.data[0]) {
+                         var weatherDescription = result.data[0].weather.description;
+                         var iconCode = result.data[0].weather.icon;
+                         var weatherIcon = "<img src='https://www.weatherbit.io/static/img/icons/" + iconCode + ".png' alt='" + weatherDescription + "' style='width: 25px;'>";
+                         var temperature = result.data[0].temp;
+                         $("#Weather").html(weatherDescription + " " + weatherIcon + ", Temp: " + temperature + "°C");
+                     } else {
+                         $("#Weather").text("Could not retrieve weather information at this time");
+                     }
+                 });
+             </script>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/hero-bg.jpg)">
+    <div class="overlay-itro"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!--<p class="display-6 color-d">Hello, world!</p>-->
+          <h1 class="hero-title mb-4">I am Yukthika Muppaneni</h1>
+          <p class="hero-subtitle"><span class="typed" data-typed-items="MSIT Student"></span></p>
+          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                      <div class="about-img">
+                        <img src="assets/img/testimonial-2.JPEG" class="img-fluid rounded b-shadow-a" alt="">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7">
+                      <div class="about-info">
+                        <p><span class="title-s">Name: </span> <span>Yukthika Muppaneni</span></p>
+                        <p><span class="title-s">Profile: </span> <span>MSIT Student</span></p>
+                        <p><span class="title-s">Email: </span> <span>muppanya@mail.uc.edu</span></p>
+                        <p><span class="title-s">Phone: </span> <span>(513) 462-3626</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-mf">
+                    <p class="title-s">Skill</p>
+                    <span>JAVA</span> <span class="pull-right">65%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>C</span> <span class="pull-right">75%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>Python</span> <span class="pull-right">50%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>HTML</span> <span class="pull-right">70%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="about-me pt-4 pt-md-0">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        About me
+                      </h5>
+                    </div>
+                    <p class="lead">
+                     I'm an Passionate and dedicated MSIT student at the University of Cincinnati with a strong drive for solving complex problems through creative software solutions. My expertise lies in seamlessly combining technical skills with a commitment to collaboration and continuous learning. Ready to leverage my academic knowledge and hands-on experience, I aim to contribute effectively as a professional software engineer.  
+                    </p>
+                    <p class="lead">
+                      Eager to kickstart my career in professional software engineering, I am enthusiastic about contributing my skills to an innovative team. With a readiness to tackle challenges, a commitment to continuous learning, and an ability to thrive in fast-paced settings, I bring a passion for technology and a dedication to achieving excellence in software development, ready to make a substantial impact on future projects.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Education Section ======= -->
+    <section id="Education" class="Education-mf pt-5 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Education
+              </h3>
+              <p class="subtitle-a">
+                "Currently an MSIT student with diverse tech skills, ready to apply knowledge in real-world scenarios."
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-briefcase"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Masters</h2>
+                <p class="s-description text-center">
+                  Currently University of Cincinnati MSIT 2nd-semester student with a 3.8 GPA in the 1st semester, expected to graduate in December 2024. Enthusiastically interested in various IT technologies and poised to apply this knowledge in the practical IT landscape.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-card-checklist"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Bachelor of Technology (BTECH)</h2>
+                <p class="s-description text-center">
+                  Graduated with a Bachelor of Technology from Malla Reddy Engineering College for Women, India, achieving a GPA of 3.85 out of 4 in Information Technology. Possesses efficient knowledge and skills in the field.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-bar-chart"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Intermediate</h2>
+                <p class="s-description text-center">
+                  Concluded Intermediate studies at Narayana Group of Colleges in India, achieving a GPA of 3.92 out of 4 in MPC, showcasing adeptness in tackling complex problem-solving.
+                </p>
+              </div>
+            </div>
+          </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Counter Section ======= -->
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <div class="counter-num">
+        
+                <span class="counter-text">Skilled in Tools like Microsoft tools like Word, Excel, Powerpoint</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
+              </div>
+              <div class="counter-num">
+
+                <span class="counter-text">Knowledgeable with computer networking concepts and functionality, database management</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-people"></i></span>
+              </div>
+              <div class="counter-num">
+                
+                <span class="counter-text">Experience with technical writing and technical support</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-award"></i></span>
+              </div>
+              <div class="counter-num">
+                <span class="counter-text">Awarded Best Idea Presentation Award, Malla Reddy Engineering College For Women</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Counter Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="Projects" class="portfolio-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Projects
+              </h3>
+              <p class="subtitle-a">
+                Accomplished hands-on experience with impactful technical projects during my undergraduate studies.
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="assets/img/work-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="assets/img/work-1.jpg" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">Improved and Dynamic Distance Measure Algorithms to Detect Fake and Clone Social Networking Accounts</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">AIML</span> / <span class="w-date">Fall 2022</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="assets/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="assets/img/work-2.jpg" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">Deep Learning Convolutional Network Framework for Skin Cancer Detection and Classification</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">AIML</span> / <span class="w-date">Fall 2022</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="assets/img/work-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="assets/img/work-3.jpg" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">Artificial Intelligence for Efficient Spam and Phishing Email Classification</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">AIML</span> / <span class="w-date">Fall 2022</span>
+                    </div>
+                  </div>
+                  
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <div class="testimonials paralax-mf bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+
+           
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="testimonial-box">
+                    <div class="author-test">
+                      <img src="assets/img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
+                      <span class="author">Yukthika Muppaneni</span>
+                    </div>
+                    <div class="content-test">
+                      <p class="description lead">
+                      LinkedIn Profile Link: https://www.linkedin.com/in/muppaneni-yukthika-397b21213
+                      </p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- <div id="testimonial-mf" class="owl-carousel owl-theme">
+          
+        </div> -->
+          </div>
+        </div>
+      </div>
+    </div><!-- End Testimonials Section -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="Work" class="blog-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Work
+              </h3>
+              <p class="subtitle-a">
+                Interned at 1-Stop, IIT Bombay as a Data Analyst Assistant, successfully completing various projects under their guidance.
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="assets/img/post-1.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">ML Algorithms, Python</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="blog-single.html">Prediction of marks of a student</a></h3>
+                <p class="card-description">
+                  This ML web application delivers the user marks of a student based on number of hours he/she studied.
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  
+                </div>
+                <div class="post-date">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="assets/img/post-2.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">ML Algorithms, Python</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="blog-single.html">Detection of parkinson Disease</a></h3>
+                <p class="card-description">
+                  Detect the presence of Parkinson Disease individuals using various factors
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  
+                </div>
+                <div class="post-date">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="assets/img/post-3.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">ML Algorithms, Python</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="blog-single.html">Fake News Detection</a></h3>
+                <p class="card-description">
+                  Detect the fake news available on social media platforms.
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  
+                </div>
+                <div class="post-date">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="Certifications" class="portfolio-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Certifications
+              </h3>
+              <p class="subtitle-a">
+                Attained valuable certifications to acquire knowledge for the IT industry.
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="assets/img/cert-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="assets/img/cert-1.jpg" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">Introduction to Cybersecurity, Cybersecurity Essentials, Introduction to Packet Tracer.</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">CISCO</span> / <span class="w-date">Spring 2023</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="assets/img/cert-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="assets/img/cert-2.jpg" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">Visual Machine Learning, Creating Database Tables with SQL, Images in HTML.</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">Coursera</span> / <span class="w-date">Spring 2023</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="assets/img/cert-3.PNG" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="assets/img/cert-3.PNG" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">Introduction to Cloud Computing, Introduction to AI.</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">IBM</span> / <span class="w-date">Spring 2023</span>
+                    </div>
+                  </div>
+                  
+    </section><!-- End Contact Section -->
+    <!--Experiements-->
+    <section id="Experiments" class="full-height px-lg-5">
+      <div class="container">
+          <h2 class="mb-5">Experiments </h2>
+          <ul class="fa-ul mb-0">
+
+            <!-- <li>
+            <br>
+              <h3 class="mb-0">Contact me</h5>
+            </li> -->
+            <br>
+            <!-- Show my mail ID -->
+            <li><div id="email" onclick="showhideEmail()"><h5 class="mb-0">show my email</h5></div></li>
+            <script>
+              var shown = false;
+              function showhideEmail(){
+                if (shown){
+                document.getElementById('email').innerHTML = "<h5>Show my email</h5>";
+                shown = false;
+                }else{
+                var myemail ="<h5><a heref='mailto:muppanya" + "@" + "mail.uc.edu'>muppanya" + "@" + "mail.uc.edu</a></h5>";
+                document.getElementById("email").innerHTML = myemail;
+                shown = true;
+                }
+              }
+            </script>
+            <h5 class="mb-0">Mobile Number: +1 (513) 462-3626 </h5>
+            <br>
+            <!-- Projects -->
+            <h3 class="mb-0">Experiments</h5>
+            <!-- Git url -->
+            Repository URL: <a href="https://github.com/muppanya"> https://github.com/muppanya</a>
+            <br>
+            <br>
+              <h3 class="mb-0">Small live experiments</h5>
+              <!-- React -->
+              <div id="root"></div>
+              <!-- React Script -->
+              <script src="assets/js/main.edf8ac75.js"></script>
+              <script>
+                // Get a reference to the root div
+                const rootElement = document.getElementById('root');
+
+                // Render your React component inside the root div
+                ReactDOM.render(React.createElement(DigitalClock), rootElement);
+              </script>
+              </li>
+              <li>
+              <!-- dital clock -->
+              <h5 class="mb-0">Digital clock with Javascript:</h5>
+                <div id="digit-clock"></div>
+                <script>
+                  function displayTime() {
+                    document.getElementById('digit-clock').innerHTML="current time :"+ new Date();
+
+                  }
+                  setInterval(displayTime,500);
+                </script>
+            </li>
+            <br>
+
+            <!-- Analog clock -->
+          <li>
+            <h5 class="mb-0">Analog clock:</h5>
+            <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+          </li>
+          <script src="https://waph-uc.github.io/clock.js"></script>
+          <script>
+            // Analog Clock
+            var canvas= document.getElementById("analog-clock");
+            var ctx=canvas.getContext("2d");
+            var radius= canvas.height /2;
+            ctx.translate(radius, radius);
+            radius=radius * 0.90;
+            setInterval(drawClock, 1000);
+            function drawClock(){
+              drawFace(ctx, radius);
+              drawNumbers(ctx, radius);
+              drawTime(ctx, radius);
+            }
+          </script>
+          <br>
+          <!-- Show date -->
+          <li>
+            <h5 class="mb-0">Date:</h5>
+            <div id="date" onclick="document.getElementById('date').innerText=Date()">Click here to show date</div>
+          </li>
+        </ul>
+
+      </div>
+  </section>
+    <!--End Experiments-->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Yukthika Muppaneni: <strong>muppanya@mail.uc.edu</strong></p>
+            <div class="credits">
+              <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+            -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
