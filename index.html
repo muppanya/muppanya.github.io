@@ -95,6 +95,22 @@
           <p class="hero-subtitle"><span class="typed" data-typed-items="MSIT Student"></span></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
+         <!-- Jokes API -->
+            <h5 class="mb-0">Joke of the Day:</h5> <div id="joke"></div>
+            <script>
+            function fetchNewJoke() {
+            $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function(result) {
+            if (result && result.joke) {
+                console.log("from jokeapi:" + JSON.stringify(result));
+                $("#joke").html(result.joke);
+            } else {
+                $("#joke").text("Could not retrieve a joke at this time");
+            }
+                });
+            }
+	          fetchNewJoke();
+	          setInterval(fetchNewJoke, 60000);
+            </script>
       </div>
     </div>
   </div><!-- End Hero Section -->
